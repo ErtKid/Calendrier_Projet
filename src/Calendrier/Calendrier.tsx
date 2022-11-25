@@ -17,7 +17,7 @@ import React from "react";
     onChange: (date: Date) => void;
   };
   
-  const Calendar: React.FC<Props> = ({ value = new Date(), onChange }) => {
+  const Calendrier: React.FC<Props> = ({ value = new Date(), onChange }) => {
     const startDate = startOfMonth(value);
     const endDate = endOfMonth(value);
     const numDays = differenceInDays(endDate, startDate) + 1;
@@ -75,5 +75,5 @@ import React from "react";
     );
   };
   
-  export default Calendar;
+  export default Calendrier;
   
