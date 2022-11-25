@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { useState } from "react";
-import Calendar from "./Calendrier/Calendrier";
+import Calendrier from "./Calendrier/Calendrier";
 import Button from "./components/Button";
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
         <Button onClick={handleSetToday}>Aujourd hui</Button>
       </div>
 
-      <Calendar value={currentDate} onChange={setCurrentDate} />
+      <Calendrier value={currentDate} onChange={setCurrentDate} />
     </div>
   );
 };

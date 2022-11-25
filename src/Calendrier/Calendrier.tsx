@@ -11,7 +11,12 @@ import React from "react";
   import Cell from "./Cell";
   
   const weeks = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
-  
+  const aujourdhui = new Date();
+  const startOfMonth = new Date( aujourdhui.getFullYear(), aujourdhui.getMonth() -1 , 1 ).getDay() 
+  const endOfMonth = new Date( aujourdhui.getFullYear(), aujourdhui.getMonth()  , 0 ).getDate()
+
+
+
   type Props = {
     value?: Date;
     onChange: (date: Date) => void;
@@ -77,3 +82,60 @@ import React from "react";
   
   export default Calendrier;
   
+
+
+  
+// import { useState } from "react";
+
+// function App() {
+//   // state (calendrier, données)
+//   const calendrier = [];
+//   const [mois, setMonth] = useState(); // janvier = 1; fevrier = 2...
+//   const [annee, setAnnee] = useState(); // 2022; 2021...
+
+//   const aujourdhui = new Date();
+
+//   const premierJourDuMois = new Date(
+//     aujourdhui.getFullYear(),
+//     aujourdhui.getMonth(),
+//     1
+//   ).getDay();
+
+//   const nombreJourDuMois = new Date(
+//     aujourdhui.getFullYear(),
+//     aujourdhui.getMonth() + 1,
+//     0
+//   ).getDate();
+//   console.log(premierJourDuMois, nombreJourDuMois);
+//   // comportements
+//   // affichage (render)
+
+//   let dateCompteur = 1;
+//   let isPrintDate = false;
+//   for (let week = 0; week <= 5; week++) {
+//     calendrier.push([]);
+//     for (let day = 0; day < 7; day++) {
+//       if (day == premierJourDuMois - 1) {
+//         isPrintDate = true;
+//       }
+//       if (dateCompteur > nombreJourDuMois) {
+//         isPrintDate = false;
+//       }
+//       if (isPrintDate) {
+//         calendrier[week].push(dateCompteur);
+//         dateCompteur++;
+//       } else {
+//         calendrier[week].push("");
+//       }
+//     }
+//   }
+
+//   return (
+//     <div>
+//       {" "}
+//       <h1>Calendrier</h1>
+//       {calendrier}
+//     </div>
+//   );
+// }
+// export default App;
