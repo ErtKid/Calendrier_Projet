@@ -24,7 +24,10 @@ const Calendar = () => {
     setDate(new Date(nextYear, date.getMonth(), date.getDate()));
   };
 
-  const handleSetToday = () => setDate(new Date());
+  const handleSetToday = () => {
+    setDate(new Date());
+    setSelectedDate(new Date());
+  };
 
   const monthNames = [
     "Janvier",
